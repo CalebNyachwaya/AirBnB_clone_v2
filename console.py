@@ -138,18 +138,18 @@ class HBNBCommand(cmd.Cmd):
                     try:
                         value = eval(value)
                     except (SyntaxError, NameError):
-                        # Skip if evaluation fails (for non-string values)
+                        """ Skip if evaluation fails (for non-string values) """
                         continue
 
-                # Store the key-value pair in the kwargs dictionary
+            """ Store the key-value pair in the kwargs dictionary """
                 kwargs[key] = value
 
-            # If no keyword arguments, create an instance of the specified class without attributes
+            """ If no keyword arguments, create an instance of the specified class without attributes """
             if kwargs == {}:
-                # Instantiate the class without attributes
+                """ Instantiate the class without attributes """
                 new_object = eval(args_list[0])()
             else:
-                # Create an instance of the class with provided keyword arguments
+                """ Create an instance of the class with provided keyword arguments """
                 new_object = eval(args_list[0])(**kwargs)
 
                 storage.new(new_object)
@@ -159,7 +159,7 @@ class HBNBCommand(cmd.Cmd):
             new_object.save()
 
         except SyntaxError:
-            # Handle syntax errors if no input is provided
+            """ Handle syntax errors if no input is provided """
             print("Invalid syntax. Please provide the necessary information.")
 
     def help_create(self):
