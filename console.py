@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Main Console program
+    Console module
 """
 import cmd
 import models
@@ -37,9 +37,14 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new instance of a Model"""
         if arg:
             try:
+                """Split the argument into a list of strings"""
                 args = arg.split()
-                template = models.dummy_classes[args[0]]
-                new_instance = template()
+
+                """get the tempclass from dummy_classes"""
+                template_class = models.dummy_classes[args[0]]
+
+                """create a new instance of the template class"""
+                new_instance = template_class()
                 try:
                     for pair in args[1:]:
                         pair_split = pair.split("=")
