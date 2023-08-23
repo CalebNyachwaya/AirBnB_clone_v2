@@ -46,8 +46,8 @@ class HBNBCommand(cmd.Cmd):
                 """create a new instance of the template class"""
                 new_instance = template_class()
                 try:
-                    for pair in args[1:]:
-                        pair_split = pair.split("=")
+                    for attr_pair in args[1:]:
+                        pair_split = attr_pair.split("=")
                         if (hasattr(new_instance, pair_split[0])):
                             value = pair_split[1]
                             flag = 0
