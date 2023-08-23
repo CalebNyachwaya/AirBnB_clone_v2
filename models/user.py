@@ -1,20 +1,19 @@
 #!/usr/bin/python3
+# user.py
 """
-    module containing user class
-    module containing user class
+    Module containing the User class
 """
+from os import environ
 from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine, Column, Integer, String
-from os import environ
 
 storage_engine = environ.get("HBNB_TYPE_STORAGE")
 
 
 class User(BaseModel, Base):
     """
-        User class for the user
-        User class for the user
+        Represents the User class
     """
     if (storage_engine == 'db'):
         __tablename__ = "users"
