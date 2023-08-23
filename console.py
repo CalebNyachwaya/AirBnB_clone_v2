@@ -51,6 +51,8 @@ class HBNBCommand(cmd.Cmd):
                         if (hasattr(new_instance, pair_split[0])):
                             value = pair_split[1]
                             flag = 0
+
+                            """Check if the value is value is a string"""
                             if (value.startswith('"')):
                                 value = value.strip('"')
                                 value = value.replace("\\", "")
@@ -69,6 +71,8 @@ class HBNBCommand(cmd.Cmd):
                                 setattr(new_instance, pair_split[0], value)
                         else:
                             continue
+
+                    """Save the new instance"""
                     new_instance.save()
                     print(new_instance.id)
                 except:
