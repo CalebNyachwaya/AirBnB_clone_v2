@@ -1,13 +1,13 @@
 #!/usr/bin/python3
+# place.py
 """
     module containing places to represent the place
-    module containing places to represent the place
 """
+from os import environ
 from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
 import models
 from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
-from os import environ
 
 storage_engine = environ.get("HBNB_TYPE_STORAGE")
 
