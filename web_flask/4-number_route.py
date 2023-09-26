@@ -32,7 +32,7 @@ def python(text):
     text = text.replace('_', ' ')
     return "Python {}".format(text)
 
-  
+
 @app.route('/number/<int:n>', strict_slashes=False)
 def num_display(n):
     # display “n is a number” only
